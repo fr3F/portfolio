@@ -1,0 +1,26 @@
+<router-outlet></router-outlet>
+
+<div class=" text-white container mx-auto my-4 w-full">
+    <!-- Titre principal -->
+    <app-scrolled-titre></app-scrolled-titre>
+    
+    <!-- Expérience + Profil + Contact -->
+    <div class="gap-14 mt-12 flex justify-center flex-wrap">
+        <app-software-skills class="flex-grow basis-20"></app-software-skills>
+        <app-profil class="flex-grow basis-20"></app-profil>
+        <app-contact class="flex-grow basis-20"></app-contact>
+    </div>    
+
+    <!-- experience -->
+    <app-experience></app-experience>
+    <!-- Hobbies + Education + Skills -->
+    <div class="flex gap-x-6 mt-12 flex-wrap justify-center align-center content-center">
+        <!-- Sections alignées et espacées -->
+        <app-education class="flex basis-1/2"></app-education>
+        <app-hobbies class="flex-grow basis-64"></app-hobbies>
+        <app-language class="flex-grow basis-64"></app-language>
+    </div>
+
+    <app-footer></app-footer>
+</div>
+

@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playwrite+GB+J+Guides:ital@0;1&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ensuite, tes styles normaux */
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+.playwrite-gb-j-guides-regular {
+  font-family: "Playwrite GB J Guides", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.playwrite-gb-j-guides-regular-italic {
+  font-family: "Playwrite GB J Guides", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+body{
+  background-color: #262525;
+}
+
+@layer components {
+  /* Classe personnalisée bordur */
+  .bordur {
+    @apply relative; /* Positionnement relatif requis pour ::after */
+  }
+
+  .bordur::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0; /* Positionner la bordure en haut */
+    width: 88%; /* Largeur de la demi-ligne */
+    height: 2px; /* Hauteur de la bordure */
+    background-color: white; /* Couleur de la bordure */
+  }
+
+  .bordur::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0; /* Positionner la bordure à droite */
+    width: 2px; /* Largeur de la bordure */
+    height: 125%; /* Hauteur de la demi-ligne */
+    background-color: white; /* Couleur de la bordure */
+  }
+
+}
+
+
+@keyframes slow-zoom-in {
+  from {
+    transform: translateX(-50%) scale(1); /* Centrage + Échelle normale */
+    opacity: 0.8;
+  }
+  to {
+    transform: translateX(-50%) scale(1.1); /* Zoom avec centrage conservé */
+    opacity: 1;
+  }
+}
+
+.slow-zoom-in {
+  animation: slow-zoom-in 1.2s ease-out forwards;
+}
+
+

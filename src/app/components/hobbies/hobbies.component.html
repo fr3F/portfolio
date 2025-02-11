@@ -1,0 +1,26 @@
+<h2
+  data-aos="zoom-in" 
+  data-aos-duration="1000" 
+  data-aos-delay="30"  
+  class="text-yellow-400 text-xl font-bold uppercase mb-4">
+  {{ titre }}
+</h2>
+
+<ul class="space-y-4">
+  <li 
+    *ngFor="let hobbie of hobbies"
+    class="flex items-center"
+    [attr.data-aos]="hobbie.event" 
+    [attr.data-aos-duration]="hobbie.duration"
+    [attr.data-aos-delay]="hobbie.delay">
+    
+    <div class="relative flex items-center">
+      <img [src]="'assets/icones/svg/' + hobbie.icone + '.svg'" alt="{{ hobbie.titre }}" class="w-8 h-8">
+    </div>
+
+    <div class="ml-4">
+      <strong>{{ hobbie.titre }}</strong>
+    </div>
+
+  </li>
+</ul>

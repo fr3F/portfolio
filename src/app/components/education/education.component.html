@@ -1,0 +1,39 @@
+<div class="font-sans">
+  <h2 
+    data-aos="zoom-in" 
+    data-aos-duration="1000" 
+    data-aos-delay="30" 
+    class="text-yellow-400 text-xl font-bold uppercase mb-4">{{ titre }}</h2>
+
+  <!-- Ajout de flex et gap-y-8 pour espacer les listes -->
+  <div class="flex flex-wrap gap-y-8">
+    <ul *ngFor="let edu of eductions"
+        class="space-y-4"   
+        [attr.data-aos]="edu.event" 
+        [attr.data-aos-duration]="edu.duration"
+        [attr.data-aos-delay]="edu.delay">
+      
+      <li class="flex items-center gap-x-6"> <!-- Espacement entre l'icône et le texte -->
+        <div class="relative flex items-center">
+          <!-- SVG pour la flèche -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-48 h-12" viewBox="0 0 200 40">
+            <!-- Rectangle principal -->
+            <rect x="0" y="0" width="160" height="40" fill="#FFC107" />
+            <!-- Pointe de la flèche -->
+            <polygon points="160,0 190,20 160,40" fill="#FFC107" />
+            <!-- Texte au centre -->
+            <text x="88" y="25" class="font-bold text-lg fill-black" text-anchor="middle">{{ edu.data }}</text>
+          </svg>        
+        </div>
+        <div class="ml-4">
+          <!-- Titre -->
+          <strong>{{ edu.titre }}</strong>
+          <ul>
+            <li>{{ edu.ecole }}</li>
+            <li>{{ edu.filiere }}</li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
