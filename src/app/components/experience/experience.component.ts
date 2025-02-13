@@ -68,7 +68,7 @@ export class ExperienceComponent implements OnInit, AfterViewChecked {
     },
     {
       data: "Oct 2024",
-      titre: " Innovation d'un applicatin Mobile Torche",
+      titre: " Innovation d'un application Mobile Torche",
       img: 'assets/images/torche.png', // Image associée à l'expérience
       details: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, dolorum ullam facere excepturi earum consequuntur? In, placeat facere pariatur, deserunt vitae debitis corporis doloremque aliquam saepe illum non voluptates enim?',
       resultatAttendu: 'Création d\'une plateforme de gestion des candidatures.',
