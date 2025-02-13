@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './profil.component.css'
 })
 export class ProfilComponent {
+  technologies = "Angular / Node.js / TypeScript"
   profil = {
     imageSrc: 'assets/images/fitiavana.png',
     description: "En tant que développeur, ma motivation repose sur la satisfaction des utilisateurs, le plaisir de résoudre des défis techniques et le désir d'apprendre pour livrer des solutions performantes. Curieux et engagé, je m’investis pleinement dans chaque projet, car développer est bien plus qu’un métier pour moi : c’est une passion."
