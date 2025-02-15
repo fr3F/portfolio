@@ -9,7 +9,7 @@ import { HobbiesComponent } from './components/hobbies/hobbies.component';
 import { EducationComponent } from './components/education/education.component';
 import { SoftwareSkillsComponent } from './components/software-skills/software-skills.component';
 import { LanguageComponent } from './components/language/language.component';
-import { ScrolledTitreComponent } from './components/scrolled_titre/scrolled_titre.component';
+import { ScrolledTitreComponent } from './components/scrolled_titre/ScrolledTitreComponent';
 import { FooterComponent } from './components/footer/footer.component';
 
 @Component({

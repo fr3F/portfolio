@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ScrolledTitreComponent } from './scrolled_titre.component';
+import { ScrolledTitreComponent } from './ScrolledTitreComponent';
 
 describe('ScrolledTitreComponent', () => {
   let component: ScrolledTitreComponent;
