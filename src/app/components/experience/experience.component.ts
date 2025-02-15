@@ -1,37 +1,49 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewChecked, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import AOS from 'aos';  // Importez AOS
+import { AfterViewChecked, Component, OnInit } from '@angular/core';
+import AOS from 'aos';
+
+export interface Experience {
+  id: number;
+  titre: string;
+  date: string;
+  details: string;
+  technologies: string[];
+  img: string;
+  lien: string;
+  resultatAttendu?: string;
+  event?: string;
+  duration?: number;
+  delay?: number;
+}
 
 @Component({
   selector: 'app-experience',
-  standalone: true, // Marque ce composant comme standalone
   imports: [CommonModule],
   templateUrl: './experience.component.html',
   styleUrls: ['./experience.component.css'],
 })
+
 export class ExperienceComponent implements OnInit, AfterViewChecked {
-  isSelect = false; // Variable pour contrôler si une expérience est sélectionnée
+  isSelect = false;
   isImage = false;
-  activeExperience: any = null;
-  selectedExperience: any;
+  activeExperience: Experience | null = null;
+  selectedExperience: Experience | null = null;
 
   ngOnInit(): void {
-    // Initialisation d'AOS avec options
     AOS.init({ disable: false });
-
     this.isImage = true;
-    this.isSelect = false; // Initialise la sélection à false lors du chargement du composant
+    this.isSelect = false;
   }
 
   ngAfterViewChecked(): void {
-    AOS.refresh(); // Réinitialise AOS si du contenu est modifié dynamiquement
+    AOS.refresh();
   }
 
-  // Données d'expérience avec détails, résultat attendu, technologies, et image
   titre = "EXPÉRIENCE ET RÉALISATIONS";
-  experience = [
+  experience: Experience[] = [
     {
-      data: "Mar 2023 - Juin 2023",
+      id: 1,
+      date: "Mar 2023 - Juin 2023",
       titre: "Mise en place d'application Web chez SODIM",
       img: 'assets/images/Dépot.png', // Image associée à l'expérience
       details: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, dolorum ullam facere excepturi earum consequuntur? In, placeat facere pariatur, deserunt vitae debitis corporis doloremque aliquam saepe illum non voluptates enim?',
@@ -43,7 +55,8 @@ export class ExperienceComponent implements OnInit, AfterViewChecked {
       event: "fade-left"
     },
     {
-      data: "Avr 2023 - Sept 2023",
+      id: 2,
+      date: "Avr 2023 - Sept 2023",
       titre: "Conception d'un site Web chez Value-IT",
       img: 'assets/images/image-admin-Valu.png', // Image associée à l'expérience
       details: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, dolorum ullam facere excepturi earum consequuntur? In, placeat facere pariatur, deserunt vitae debitis corporis doloremque aliquam saepe illum non voluptates enim?',
@@ -55,7 +68,8 @@ export class ExperienceComponent implements OnInit, AfterViewChecked {
       event: "fade-right"
     },
     {
-      data: "Sept 2024",
+      id: 3,
+      date: "Sept 2024",
       titre: "Production d'un Porfolio",
       img: 'assets/images/portfolio.png', // Image associée à l'expérience
       details: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, dolorum ullam facere excepturi earum consequuntur? In, placeat facere pariatur, deserunt vitae debitis corporis doloremque aliquam saepe illum non voluptates enim?',
@@ -67,8 +81,9 @@ export class ExperienceComponent implements OnInit, AfterViewChecked {
       event: "fade-left"
     },
     {
-      data: "Oct 2024",
-      titre: " Innovation d'un application Mobile Torche",
+      id: 4,
+      date: "Oct 2024",
+      titre: "Innovation d'une application Mobile Torche",
       img: 'assets/images/torche.png', // Image associée à l'expérience
       details: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, dolorum ullam facere excepturi earum consequuntur? In, placeat facere pariatur, deserunt vitae debitis corporis doloremque aliquam saepe illum non voluptates enim?',
       resultatAttendu: 'Création d\'une plateforme de gestion des candidatures.',
@@ -80,25 +95,25 @@ export class ExperienceComponent implements OnInit, AfterViewChecked {
     },
   ];
 
-  selectExperience(exp: any) {
+  selectExperience(exp: Experience): void {
     this.selectedExperience = exp;
-    this.isSelect = true;
-    this.isImage = false;
     this.activeExperience = exp;
+    this.isSelect = true;
+    this.isImage = false;
   }
 
-  onMouseEnter(exp: any) {
+  onMouseEnter(exp: Experience): void {
     this.selectedExperience = exp;
     this.isSelect = true;
     this.isImage = false;
   }
 
-  onMouseLeave() {
+  onMouseLeave(): void {
     this.isSelect = false;
     this.isImage = false;
   }
 
-  hoverExperience(exp: any) {
+  hoverExperience(exp: Experience): void {
     this.activeExperience = exp;
   }
 }

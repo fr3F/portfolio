@@ -9,6 +9,31 @@
   box-sizing: border-box;
 }
 
+/* Pour Firefox */
+* {
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+}
+
+/* Pour Chrome, Edge et Safari */
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* Style de la barre de progression */
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 5px;
+  background: linear-gradient(to right, #4CAF50, #81C784);
+  z-index: 9999;
+  transition: width 0.2s ease-out;
+}
+
+
 .playwrite-gb-j-guides-regular {
   font-family: "Playwrite GB J Guides", serif;
   font-weight: 400;
@@ -21,8 +46,9 @@
   font-style: italic;
 }
 
-body{
+body,html{
   background-color: #262525;
+  overflow-x: hidden;
 }
 
 @layer components {
@@ -69,4 +95,25 @@ body{
   animation: slow-zoom-in 1.2s ease-out forwards;
 }
 
+/* style scroll-bar */
+/* Largeur de la scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
 
+/* Couleur de fond de la scrollbar */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* Style du "thumb" (la partie que l'on fait glisser) avec un dégradé */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #4CAF50, #81C784);
+  border-radius: 10px;
+}
+
+/* Effet au survol */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #388E3C, #66BB6A);
+}

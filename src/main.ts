@@ -1,13 +1,14 @@
 import { bootstrapApplication } from '@angular/platform-browser';
 import { importProvidersFrom } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { provideRouter } from '@angular/router';
+import { CommonModule } from '@angular/common';
 import { AppComponent } from './app/app.component';
-import { appConfig } from './app/app.config';
+import { routes } from './app/app-routing.module';
 
+// Bootstrapping de l'application avec routing et lazy loading
 bootstrapApplication(AppComponent, {
-  ...appConfig,
   providers: [
-    ...(appConfig.providers || []),  // ✅ Assure de conserver les autres providers existants
-    importProvidersFrom(BrowserAnimationsModule)  // ✅ Ajout de BrowserAnimationsModule
-  ]
+    importProvidersFrom(CommonModule),
+    provideRouter(routes),
+  ],
 }).catch((err) => console.error(err));

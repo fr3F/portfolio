@@ -1,4 +1,4 @@
 declare module 'aos' {
-    const AOS: any;
+    const AOS;
     export default AOS;
 }
