@@ -22,25 +22,25 @@ export class ContactComponent {
   contacts = [
     {
       icone: 'lieu',
-      titre: 'Lot CM 25 Malaza Ampitatafika, 102, Antananarivo',
+      lieu: 'Malaza Ampitatafika',
       duration: 1200,
       delay: 20,
     },
     {
       icone: 'phone',
-      titre: '+261 34 57 835 84',
+      contact: '+261 34 57 835 84',
       duration: 1500,
       delay: 20,
     },
     {
       icone: 'email',
-      titre: 'frazakarivony.dev@gmail.com',
+      email: 'frazakarivony.dev@gmail.com',
       duration: 1600,
       delay: 20,
     },
     {
       icone: 'linkedin',
-      titre: 'Mon profil LinkedIn',
+      linkedin: 'bit.ly/frazakarivony_linkedin',
       duration: 1500,
       delay: 20,
     }

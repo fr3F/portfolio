@@ -42,11 +42,31 @@
       </div>
 
       <!-- Texte associé (titre) -->
-      <div class="ml-4 text-white text-sm">
-        <strong>{{ contact.titre }}</strong>
+      <div class="ml-4 ">
+        <!-- Si c'est Lieu, ajouter le lieu -->
+
+        <a [href]="'https://www.google.com/maps/dir/?api=1&destination=' + contact.lieu" target="_blank" rel="noopener noreferrer" class="hover:underline">
+          <strong>{{ contact.lieu }}</strong>
+        </a>
+         
+        <!-- Si c'est Téléphone, ajouter le numéro -->
+        <ng-container *ngIf="contact.icone === 'phone'">
+          <a href="tel:+261 34 57 835 84" target="_blank" class=" hover:underline">
+            <strong>+261 34 57 835 84</strong>
+          </a>
+        </ng-container>
+        
+        <!-- Si c'est Email, ajouter le lien -->
+          <ng-container *ngIf="contact.icone === 'email'">
+            <a href="mailto:{{contact.email}}" target="_blank" class=" hover:underline"> 
+              <strong>{{contact.email}}</strong>
+            </a>
+          </ng-container>
         <!-- Si c'est LinkedIn, ajouter le lien -->
         <ng-container *ngIf="contact.icone === 'linkedin'">
-          <a href="https://bit.ly/mylinkedin_frazakarivony" target="_blank" class="text-blue-500 hover:underline"> Mon profil LinkedIn</a>
+          <a href="{{contact.linkedin}}" target="_blank" class=" hover:underline"> 
+            <strong>Mon profil LinkedIn</strong>
+          </a>
         </ng-container>
       </div>
     </li>
