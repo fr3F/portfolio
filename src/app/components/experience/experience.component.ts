@@ -10,7 +10,7 @@ export interface Experience {
   technologies: string[];
   img: string;
   lien: string;
-  resultatAttendu?: string;
+  resultatAttendu?: string[];
   event?: string;
   duration?: number;
   delay?: number;
@@ -43,13 +43,19 @@ export class ExperienceComponent implements OnInit, AfterViewChecked {
   experience: Experience[] = [
     {
       id: 1,
-      date: "Mar 2023 - Juin 2023",
-      titre: "Mise en place d'application Web chez SODIM",
-      img: 'assets/images/Dépot.png', // Image associée à l'expérience
-      details: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, dolorum ullam facere excepturi earum consequuntur? In, placeat facere pariatur, deserunt vitae debitis corporis doloremque aliquam saepe illum non voluptates enim?',
-      resultatAttendu: 'Amélioration de l\'interface utilisateur et de la performance des pages.',
-      technologies: ['Angular', 'Node.js', 'MySQL'],
-      lien: 'https://github.com/FitiavanaRazakarivony/Gestion-stock-multi-Depot',
+      date: "Avr 2024 - Sept 2024",
+      titre: "Développement d'une application Web de gestion de stock multi-dépôt chez SODIM",
+      img: "assets/images/Dépot.png",
+      details: "Développement d'une application Web permettant la gestion des stocks répartis sur plusieurs dépôts. L'application offre une interface intuitive pour suivre les entrées, sorties et transferts de marchandises en temps réel.Intégration d'un tableau de bord interactif, gestion des rôles utilisateurs et sécurisation des accès via JWT. Optimisation des performances pour une meilleure réactivité des pages et une expérience utilisateur améliorée.",
+      resultatAttendu: [
+        "Amélioration de l'interface utilisateur avec une meilleure ergonomie.",
+        "Optimisation des performances pour un chargement plus rapide des pages.",
+        "Mise en place d'un tableau de bord interactif pour un suivi en temps réel.",
+        "Sécurisation des accès avec un système d'authentification robuste (JWT).",
+        "Facilitation de la gestion multi-dépôt avec une interface claire et intuitive."
+      ],
+      technologies: ["Angular", "Node.js", "MySQL"],
+      lien: "https://github.com/FitiavanaRazakarivony/Gestion-stock-multi-Depot",
       duration: 1500,
       delay: 20,
       event: "fade-left"
@@ -58,11 +64,17 @@ export class ExperienceComponent implements OnInit, AfterViewChecked {
       id: 2,
       date: "Avr 2023 - Sept 2023",
       titre: "Conception d'un site Web chez Value-IT",
-      img: 'assets/images/image-admin-Valu.png', // Image associée à l'expérience
-      details: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, dolorum ullam facere excepturi earum consequuntur? In, placeat facere pariatur, deserunt vitae debitis corporis doloremque aliquam saepe illum non voluptates enim?',
-      resultatAttendu: 'Optimisation des processus de recrutement.',
-      technologies: ['Java', 'HTML', 'CSS'],
-      lien: 'https://github.com/FitiavanaRazakarivony/Creation-of-the-Value-IT-Website-',
+      img: "assets/images/image-admin-Valu.png",
+      details: "Développement d'un portail de recrutement en ligne permettant aux candidats internes et externes de postuler à des offres d'emploi. L'application comprend un espace administrateur pour la gestion des candidatures, un système de filtrage avancé et une interface intuitive facilitant la navigation. Intégration de fonctionnalités de suivi des candidatures et amélioration de la sécurité des données pour garantir la confidentialité des informations.",
+      resultatAttendu: [
+        "Réduction des délais de traitement des candidatures grâce à un système automatisé.",
+        "Amélioration de la sécurité des données et protection des informations sensibles.",
+        "Réduction des coûts liés à la gestion des recrutements en optimisant les processus.",
+        "Amélioration de l'expérience utilisateur avec une interface ergonomique et fluide.",
+        "Facilitation de la recherche des candidatures grâce à un moteur de filtrage efficace."
+      ],
+      technologies: ["Java", "HTML", "CSS"],
+      lien: "https://github.com/FitiavanaRazakarivony/Creation-of-the-Value-IT-Website-",
       duration: 1500,
       delay: 20,
       event: "fade-right"
@@ -70,29 +82,41 @@ export class ExperienceComponent implements OnInit, AfterViewChecked {
     {
       id: 3,
       date: "Sept 2024",
-      titre: "Production d'un Porfolio",
-      img: 'assets/images/portfolio.png', // Image associée à l'expérience
-      details: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, dolorum ullam facere excepturi earum consequuntur? In, placeat facere pariatur, deserunt vitae debitis corporis doloremque aliquam saepe illum non voluptates enim?',
-      resultatAttendu: 'Création d\'une plateforme de gestion des candidatures.',
-      technologies: ['JavaScript', 'MySQL', 'Node.js'],
-      lien: 'https://frazakarivony.vercel.app/',
+      titre: "Production d'un Portfolio",
+      img: "assets/images/portfolio.png",
+      details: "Développement d'un portfolio interactif et moderne mettant en avant les compétences, projets et expériences professionnelles. Le site propose une navigation fluide, un design responsive et une section dédiée aux candidatures avec un formulaire de contact dynamique. Intégration d'un backend permettant la gestion des messages et la mise à jour du contenu de manière automatisée.",
+      resultatAttendu: [
+        "Création d'une plateforme personnalisée pour présenter les projets et compétences.",
+        "Optimisation de la performance et du référencement pour une meilleure visibilité.",
+        "Mise en place d'un design moderne et responsive adapté à tous les appareils.",
+        "Intégration d'un système de gestion des candidatures et des messages reçus."
+      ],
+      technologies: ["JavaScript", "MySQL", "Node.js"],
+      lien: "https://frazakarivony.vercel.app/",
       duration: 1500,
       delay: 20,
       event: "fade-left"
     },
+
     {
       id: 4,
       date: "Oct 2024",
       titre: "Innovation d'une application Mobile Torche",
-      img: 'assets/images/torche.png', // Image associée à l'expérience
-      details: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, dolorum ullam facere excepturi earum consequuntur? In, placeat facere pariatur, deserunt vitae debitis corporis doloremque aliquam saepe illum non voluptates enim?',
-      resultatAttendu: 'Création d\'une plateforme de gestion des candidatures.',
-      technologies: ['JavaScript', 'MySQL', 'Node.js'],
-      lien: 'https://github.com/FitiavanaRazakarivony/Torche_APK_Android',
+      img: "assets/images/torche.png",
+      details: "Développement d'une application mobile innovante permettant d'utiliser la lampe torche du smartphone avec des fonctionnalités avancées. L'application inclut différents modes d'éclairage (clignotant, SOS, intensité variable) et une interface ergonomique facilitant son utilisation. Une gestion optimisée de la batterie et de l'accès aux capteurs du téléphone a été intégrée pour améliorer la performance.",
+      resultatAttendu: [
+        "Développement d'une application mobile légère et performante.",
+        "Ajout de fonctionnalités avancées comme le mode SOS et clignotant.",
+        "Optimisation de la consommation énergétique pour prolonger l'autonomie du téléphone.",
+        "Interface intuitive et ergonomique pour une meilleure expérience utilisateur."
+      ],
+      technologies: ["JavaScript", "MySQL", "Node.js"],
+      lien: "https://github.com/FitiavanaRazakarivony/Torche_APK_Android",
       duration: 1500,
       delay: 20,
       event: "fade-right"
-    },
+    }
+
   ];
 
   selectExperience(exp: Experience): void {

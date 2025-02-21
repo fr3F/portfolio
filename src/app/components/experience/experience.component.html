@@ -19,11 +19,17 @@
       <!-- Détails de l'expérience -->
       <p *ngIf="selectedExperience" class="text-white mb-6">{{ selectedExperience.details || 'Aucune description disponible.' }}</p>
       
-      <div *ngIf="selectedExperience" class="mb-6">
-        <p class="font-semibold text-white"><strong>Résultat attendu :</strong> {{ selectedExperience.resultatAttendu }}</p>
+      <div *ngIf="selectedExperience" class="mt-5">
+        <p class="font-semibold text-white"><strong>Résultat attendu :</strong></p>
+        <ul class="list-disc list-inside text-white mb-2">
+          <li *ngFor="let resultat of selectedExperience.resultatAttendu">
+            {{ resultat }}
+          </li>
+        </ul>
       </div>
       
-      <div *ngIf="selectedExperience" class="mb-6">
+      
+      <div *ngIf="selectedExperience" class="mt-5">
         <p class="font-semibold text-white mb-2"><strong>Technologies utilisées :</strong></p>
         <ul class="flex flex-wrap gap-2">
           <li *ngFor="let tech of selectedExperience.technologies" class="bg-gray-200 text-black px-3 py-1 rounded-full text-sm">
