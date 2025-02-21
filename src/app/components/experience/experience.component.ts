@@ -12,6 +12,7 @@ export interface Experience {
   lien: string;
   resultatAttendu?: string[];
   event?: string;
+  methode?: string[];
   duration?: number;
   delay?: number;
 }
@@ -54,10 +55,15 @@ export class ExperienceComponent implements OnInit, AfterViewChecked {
         "Sécurisation des accès avec un système d'authentification robuste (JWT).",
         "Facilitation de la gestion multi-dépôt avec une interface claire et intuitive."
       ],
-      technologies: ["Angular", "Node.js", "MySQL"],
+      technologies: ["Angular", "Node.js", "MySQL", "Sequelize", "Express", "JWT"],
       lien: "https://github.com/FitiavanaRazakarivony/Gestion-stock-multi-Depot",
       duration: 1500,
       delay: 20,
+      methode: [
+        "POO",
+        "Principe SOLID",
+        "Autonomie avec collaboration ponctuelle "
+      ],
       event: "fade-left"
     },
     {
@@ -73,9 +79,13 @@ export class ExperienceComponent implements OnInit, AfterViewChecked {
         "Amélioration de l'expérience utilisateur avec une interface ergonomique et fluide.",
         "Facilitation de la recherche des candidatures grâce à un moteur de filtrage efficace."
       ],
-      technologies: ["Java", "HTML", "CSS"],
+      technologies: ["JavaEE", "MySQL", "HTML", "CSS"],
       lien: "https://github.com/FitiavanaRazakarivony/Creation-of-the-Value-IT-Website-",
       duration: 1500,
+      methode: [
+        "Agile",
+        "Travail collaboration ponctuelle."
+      ],
       delay: 20,
       event: "fade-right"
     },
@@ -91,9 +101,12 @@ export class ExperienceComponent implements OnInit, AfterViewChecked {
         "Mise en place d'un design moderne et responsive adapté à tous les appareils.",
         "Intégration d'un système de gestion des candidatures et des messages reçus."
       ],
-      technologies: ["JavaScript", "MySQL", "Node.js"],
+      technologies: ["Angular"],
       lien: "https://frazakarivony.vercel.app/",
       duration: 1500,
+      methode: [
+        "Travail individuel"
+      ],
       delay: 20,
       event: "fade-left"
     },
@@ -110,9 +123,12 @@ export class ExperienceComponent implements OnInit, AfterViewChecked {
         "Optimisation de la consommation énergétique pour prolonger l'autonomie du téléphone.",
         "Interface intuitive et ergonomique pour une meilleure expérience utilisateur."
       ],
-      technologies: ["JavaScript", "MySQL", "Node.js"],
+      technologies: ["Java Android"],
       lien: "https://github.com/FitiavanaRazakarivony/Torche_APK_Android",
       duration: 1500,
+      methode: [
+        "Travail individuel"
+      ],
       delay: 20,
       event: "fade-right"
     }
