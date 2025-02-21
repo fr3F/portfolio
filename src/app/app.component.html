@@ -5,11 +5,15 @@
     <!-- Titre principal -->
     <app-scrolled-titre/>
     <!-- Expérience + Profil + Contact -->
+
     <div class="gap-14 mt-12 flex justify-center flex-wrap">
-        <app-software-skills class="flex-grow basis-20"/>
-        <app-profil class="flex-grow basis-20"/>
-        <app-contact class="flex-grow basis-20"/>
-    </div>    
+        <!-- Sur mobile, app-profil sera en premier -->
+        <app-software-skills class="flex-grow basis-20 order-2 md:order-1"/>
+        <app-profil class="flex-grow basis-20 order-1 md:order-1"/>
+        <app-contact class="flex-grow basis-20 order-3 md:order-2"/>
+    </div>
+    
+    
 
     <!-- experience -->
     <app-experience/>
