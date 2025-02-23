@@ -47,7 +47,7 @@
   
       <div *ngIf="selectedExperience" class="mt-4">
         <p class="font-semibold text-gray-300"><strong>Lien : </strong>
-          <a [href]="selectedExperience.lien" target="_blank" class="text-blue-600 hover:underline">Voir plus</a>
+          <a [href]="selectedExperience.lien" target="_blank" class="text-blue-600 hover:underline">{{selectedExperience.lien}}</a>
         </p>
       </div>
     </div>

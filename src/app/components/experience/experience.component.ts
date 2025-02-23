@@ -56,7 +56,7 @@ export class ExperienceComponent implements OnInit, AfterViewChecked {
         "Facilitation de la gestion multi-dépôt avec une interface claire et intuitive."
       ],
       technologies: ["Angular", "Node.js", "MySQL", "Sequelize", "Express", "JWT"],
-      lien: "https://github.com/FitiavanaRazakarivony/Gestion-stock-multi-Depot",
+      lien: "https://bit.ly/Gestion-stock-multi-Depot",
       duration: 1500,
       delay: 20,
       methode: [
@@ -80,7 +80,7 @@ export class ExperienceComponent implements OnInit, AfterViewChecked {
         "Facilitation de la recherche des candidatures grâce à un moteur de filtrage efficace."
       ],
       technologies: ["JavaEE", "MySQL", "HTML", "CSS"],
-      lien: "https://github.com/FitiavanaRazakarivony/Creation-of-the-Value-IT-Website-",
+      lien: "https://bit.ly/Creation-of-the-Value-IT-Website",
       duration: 1500,
       methode: [
         "Agile",
@@ -124,7 +124,7 @@ export class ExperienceComponent implements OnInit, AfterViewChecked {
         "Interface intuitive et ergonomique pour une meilleure expérience utilisateur."
       ],
       technologies: ["Java Android"],
-      lien: "https://github.com/FitiavanaRazakarivony/Torche_APK_Android",
+      lien: "https://bit.ly/3QxH6Ai",
       duration: 1500,
       methode: [
         "Travail individuel"
