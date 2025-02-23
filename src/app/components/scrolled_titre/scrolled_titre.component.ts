@@ -11,7 +11,6 @@ import { Component, HostListener, Input } from '@angular/core';
 export class ScrolledTitreComponent {
 
   titre = 'RAZAKARIVONY Finoana Feno Fitiavana';
-  donnee = "25 ans | Malaza Ampitatafika | Antananarivo | 102";
   titreExperience = "EXPÉRIENCE ET RÉALISATIONS";
   isExperience = false;
 

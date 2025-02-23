@@ -21,14 +21,26 @@ export class EducationComponent {
   eductions = [
     {
       ecole: "Institut supérieur d’informatique(IS-INFO) ",
-      filiere: "Génie Logiciel", data: " sept 2024 - ce jour", titre: "2ére année en Master professionnel",
+      filiere: [
+        "Génie Logiciel",
+        "Maching Learning",
+        "Base de maintenance",
+        "Base de CCNA"
+      ],
+      data: " sept 2024 - ce jour",
+      titre: "2ére année en Master professionnel",
       duration: 1500,
       delay: 20,
       event: "fade-left"
     },
     {
       ecole: "Institut supérieur d’informatique(IS-INFO) ",
-      filiere: "Génie Logiciel", data: " dec 2022 - sept 2023", titre: "Licence en Génie Logiciel",
+      filiere: [
+        "Informatique de Gestion",
+        "Base de maintenance  Hardware",
+      ],
+      data: " dec 2022 - sept 2023",
+      titre: "Licence en informatique de Gestion",
       duration: 1200,
       delay: 20,
       event: "fade-right"

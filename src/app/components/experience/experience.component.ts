@@ -92,7 +92,7 @@ export class ExperienceComponent implements OnInit, AfterViewChecked {
     {
       id: 3,
       date: "Sept 2024",
-      titre: "Production d'un Portfolio",
+      titre: "Production d'un Portfolio en année 2024",
       img: "assets/images/portfolio.png",
       details: "Développement d'un portfolio interactif et moderne mettant en avant les compétences, projets et expériences professionnelles. Le site propose une navigation fluide, un design responsive et une section dédiée aux candidatures avec un formulaire de contact dynamique. Intégration d'un backend permettant la gestion des messages et la mise à jour du contenu de manière automatisée.",
       resultatAttendu: [
@@ -102,7 +102,7 @@ export class ExperienceComponent implements OnInit, AfterViewChecked {
         "Intégration d'un système de gestion des candidatures et des messages reçus."
       ],
       technologies: ["Angular"],
-      lien: "https://frazakarivony.vercel.app/",
+      lien: "https://razakarivony.vercel.app/",
       duration: 1500,
       methode: [
         "Travail individuel"
@@ -135,6 +135,13 @@ export class ExperienceComponent implements OnInit, AfterViewChecked {
 
   ];
 
+  visibleExperienceCount: number = 2;
+
+  showMore(): void {
+    if (this.visibleExperienceCount < this.experience.length) {
+      this.visibleExperienceCount += this.experience.length;
+    }
+  }
   selectExperience(exp: Experience): void {
     this.selectedExperience = exp;
     this.activeExperience = exp;

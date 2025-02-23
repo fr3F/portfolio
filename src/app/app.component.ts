@@ -9,16 +9,16 @@ import { HobbiesComponent } from './components/hobbies/hobbies.component';
 import { EducationComponent } from './components/education/education.component';
 import { SoftwareSkillsComponent } from './components/software-skills/software-skills.component';
 import { LanguageComponent } from './components/language/language.component';
-import { ScrolledTitreComponent } from './components/scrolled_titre/ScrolledTitreComponent';
 import { FooterComponent } from './components/footer/footer.component';
+import { ScrolledTitreComponent } from './components/scrolled_titre/ScrolledTitreComponent';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],  // Correction ici (pluriel)
+  styleUrls: ['./app.component.css'],
   imports: [
-    CommonModule,  // Ajout du module commun
+    CommonModule,
     RouterModule,
     ExperienceComponent,
     ProfilComponent,

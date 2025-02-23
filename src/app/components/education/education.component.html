@@ -28,10 +28,13 @@
         <div class="ml-4">
           <!-- Titre -->
           <strong>{{ edu.titre }}</strong>
-          <ul>
-            <li>{{ edu.ecole }}</li>
-            <li>{{ edu.filiere }}</li>
-          </ul>
+
+            <!-- Vérifier si "filiere" est un tableau -->
+            <li>
+              <ul class="list-disc pl-5">
+                <li *ngFor="let fil of edu.filiere">{{ fil }}</li>
+              </ul>
+            </li>
         </div>
       </li>
     </ul>
