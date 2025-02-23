@@ -9,7 +9,8 @@ export interface Experience {
   details: string;
   technologies: string[];
   img: string;
-  lien: string;
+  lienGitHub: string;
+  lienProd: string;
   resultatAttendu?: string[];
   event?: string;
   methode?: string[];
@@ -56,7 +57,8 @@ export class ExperienceComponent implements OnInit, AfterViewChecked {
         "Facilitation de la gestion multi-dépôt avec une interface claire et intuitive."
       ],
       technologies: ["Angular", "Node.js", "MySQL", "Sequelize", "Express", "JWT"],
-      lien: "https://bit.ly/Gestion-stock-multi-Depot",
+      lienGitHub: "https://bit.ly/Gestion-stock-multi-Depot",
+      lienProd: "",
       duration: 1500,
       delay: 20,
       methode: [
@@ -80,7 +82,8 @@ export class ExperienceComponent implements OnInit, AfterViewChecked {
         "Facilitation de la recherche des candidatures grâce à un moteur de filtrage efficace."
       ],
       technologies: ["JavaEE", "MySQL", "HTML", "CSS"],
-      lien: "https://bit.ly/Creation-of-the-Value-IT-Website",
+      lienGitHub: "https://bit.ly/Creation-of-the-Value-IT-Website",
+      lienProd: "",
       duration: 1500,
       methode: [
         "Agile",
@@ -102,7 +105,8 @@ export class ExperienceComponent implements OnInit, AfterViewChecked {
         "Intégration d'un système de gestion des candidatures et des messages reçus."
       ],
       technologies: ["Angular"],
-      lien: "https://razakarivony.vercel.app/",
+      lienGitHub: "https://razakarivony.vercel.app/",
+      lienProd: "",
       duration: 1500,
       methode: [
         "Travail individuel"
@@ -124,7 +128,8 @@ export class ExperienceComponent implements OnInit, AfterViewChecked {
         "Interface intuitive et ergonomique pour une meilleure expérience utilisateur."
       ],
       technologies: ["Java Android"],
-      lien: "https://bit.ly/3QxH6Ai",
+      lienGitHub: "https://bit.ly/3QxH6Ai",
+      lienProd: "",
       duration: 1500,
       methode: [
         "Travail individuel"
