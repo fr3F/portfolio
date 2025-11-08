@@ -151,7 +151,10 @@
 
         <!-- Liens GitHub et Prod -->
         <div class="mt-4">
-          <p class="font-semibold text-gray-300">
+          <p
+            class="font-semibold text-gray-300"
+            *ngIf="selectedExperience.lienGitHub.length > 0"
+          >
             <strong>Lien GitHub: </strong>
             <a
               [href]="selectedExperience.lienGitHub"
@@ -161,7 +164,10 @@
             >
           </p>
 
-          <p class="font-semibold text-gray-300">
+          <p
+            class="font-semibold text-gray-300"
+            *ngIf="selectedExperience.lienProd.length > 0"
+          >
             <strong>Lien Prod: </strong>
             <a
               [href]="selectedExperience.lienProd"
