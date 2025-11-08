@@ -1,43 +1,53 @@
-  <h2
-  data-aos="zoom-in" 
-  data-aos-duration="1000" 
-  data-aos-delay="30"   
-  class="text-yellow-400 text-xl font-bold uppercase mb-6">{{ titre }}</h2>
+<h2
+  data-aos="zoom-in"
+  data-aos-duration="1000"
+  data-aos-delay="30"
+  class="text-yellow-400 text-xl font-bold uppercase mb-6 mt-4"
+>
+  {{ titre }}
+</h2>
 
-  <ul class="space-y-6">
-    <li 
+<ul class="space-y-6">
+  <li
     *ngFor="let language of languages"
-    [attr.data-aos]="language.event" 
+    [attr.data-aos]="language.event"
     [attr.data-aos-duration]="language.duration"
     [attr.data-aos-delay]="language.delay"
-    class="flex items-center justify-between p-4 rounded-lg bg-gray-800 hover:bg-gray-700 transition-all duration-300">
-      
-      <div class="flex items-center w-full">
-        <!-- Icône de la langue -->
-        <div class="mr-4">
-          <img ngClass="w-16 h-9"  *ngIf="language.icone" [src]="language.icone" alt="{{ language.titre }}" class="w-12 h-12 rounded-full object-cover" />
-        </div>
-        
-        <!-- Informations sur la langue -->
-        <div class="flex flex-col w-full">
-          <!-- Titre de la langue -->
-          <span class="text-white font-semibold">{{ language.titre }}</span>
-          
-          <!-- Affichage du pourcentage -->
-          <div class="flex items-center mt-2">
-            <span class="text-yellow-400 font-bold">{{ language.pourcentage }}%</span>
-          </div>
-          
-          <!-- Barre de pourcentage -->
-          <div class="w-full bg-gray-700 rounded-full h-2 mt-2">
-            <div 
-              class="bg-yellow-400 h-full rounded-full" 
-              [style.width.%]="language.pourcentage" 
-              [attr.title]="language.pourcentage + '% mastery'">
-            </div>
-          </div>
-        </div>
+    class="flex items-center justify-between p-4 rounded-lg bg-gray-800 hover:bg-gray-700 transition-all duration-300"
+  >
+    <div class="flex items-center w-full">
+      <!-- Icône de la langue -->
+      <div class="mr-4">
+        <img
+          ngClass="w-16 h-9"
+          *ngIf="language.icone"
+          [src]="language.icone"
+          alt="{{ language.titre }}"
+          class="w-12 h-12 rounded-full object-cover"
+        />
       </div>
 
-    </li>
-  </ul>
+      <!-- Informations sur la langue -->
+      <div class="flex flex-col w-full">
+        <!-- Titre de la langue -->
+        <span class="text-white font-semibold">{{ language.titre }}</span>
+
+        <!-- Affichage du pourcentage -->
+        <div class="flex items-center mt-2">
+          <span class="text-yellow-400 font-bold"
+            >{{ language.pourcentage }}%</span
+          >
+        </div>
+
+        <!-- Barre de pourcentage -->
+        <div class="w-full bg-gray-700 rounded-full h-2 mt-2">
+          <div
+            class="bg-yellow-400 h-full rounded-full"
+            [style.width.%]="language.pourcentage"
+            [attr.title]="language.pourcentage + '% mastery'"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>

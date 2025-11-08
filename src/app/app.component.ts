@@ -11,6 +11,7 @@ import { SoftwareSkillsComponent } from './components/software-skills/software-s
 import { LanguageComponent } from './components/language/language.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ScrolledTitreComponent } from './components/scrolled_titre/ScrolledTitreComponent';
+import { ChatBotComponent } from './chat-bot/chat-bot.component';
 
 @Component({
   selector: 'app-root',
@@ -28,7 +29,8 @@ import { ScrolledTitreComponent } from './components/scrolled_titre/ScrolledTitr
     SoftwareSkillsComponent,
     LanguageComponent,
     ScrolledTitreComponent,
-    FooterComponent
+    FooterComponent,
+    ChatBotComponent
   ],
 })
 export class AppComponent {
@@ -45,3 +47,5 @@ export class AppComponent {
     }
   }
 }
+
+

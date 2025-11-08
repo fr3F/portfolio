@@ -1,114 +1,153 @@
-<div >
+<div>
   <!-- Titre principal -->
-  <h2 class="text-yellow-400 text-2xl font-bold uppercase mb-6 text-center">{{ titre }}</h2>
+  <h2 class="text-yellow-400 text-2xl font-bold uppercase mb-6 text-center">
+    {{ titre }}
+  </h2>
 
-  <h1 
-  data-aos="fade-left" 
-  data-aos-duration="1500" 
-  data-aos-delay="30" 
-  class="font-bold">Langages :</h1>
+  <h1
+    data-aos="fade-left"
+    data-aos-duration="1500"
+    data-aos-delay="30"
+    class="font-bold"
+  >
+    Langages :
+  </h1>
   <!-- Langages -->
-  <div class="grid mt-5 grid-cols-4 gap-5 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4">
-    <div *ngFor="let language of languages" class="flex flex-col items-center relative group">
-      
+  <div
+    class="grid mt-5 grid-cols-4 gap-5 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4"
+  >
+    <div
+      *ngFor="let language of languages"
+      class="flex flex-col items-center relative group"
+    >
       <!-- Icône SVG ou image -->
       <div class="relative mb-2">
-        <img 
-        data-aos="fade-left" 
-        [attr.data-aos-duration]="language.duration" 
-        [attr.data-aos-delay]="language.delay" 
-        [src]="language.svgPath" 
-        alt="{{ language.titre }}" 
-        class="w-10 h-10 rounded-full shadow-md" 
-      />
+        <img
+          data-aos="fade-left"
+          [attr.data-aos-duration]="language.duration"
+          [attr.data-aos-delay]="language.delay"
+          [src]="language.svgPath"
+          alt="{{ language.titre }}"
+          class="w-10 h-10 rounded-full shadow-md"
+        />
       </div>
-      
+
       <!-- Titre de la compétence -->
-      <span 
-      data-aos="fade-left" 
-      [attr.data-aos-duration]="language.duration" 
-      [attr.data-aos-delay]="language.delay" 
-      class="text-white font-medium text-sm text-center">{{ language.titre }}</span>
-      
+      <span
+        data-aos="fade-left"
+        [attr.data-aos-duration]="language.duration"
+        [attr.data-aos-delay]="language.delay"
+        class="text-white font-medium text-sm text-center"
+        >{{ language.titre }}</span
+      >
+
       <!-- Tooltip amélioré -->
-      <div 
-        class="absolute top-20 left-1/2 transform -translate-x-1/2 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 
-               px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-lg">
+      <div
+        class="absolute top-20 left-1/2 transform -translate-x-1/2 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-lg"
+      >
         {{ language.tooltip }}
-        <div class="absolute w-2 h-2 bg-gray-900 transform rotate-45 -top-1 left-1/2 -translate-x-1/2"></div>
+        <div
+          class="absolute w-2 h-2 bg-gray-900 transform rotate-45 -top-1 left-1/2 -translate-x-1/2"
+        ></div>
       </div>
     </div>
   </div>
 
-  <h1 
-  data-aos="fade-left" 
-  data-aos-duration="1500" 
-  data-aos-delay="30" 
-  class="font-bold mt-10">Frameworks :</h1>
+  <h1
+    data-aos="fade-left"
+    data-aos-duration="1500"
+    data-aos-delay="30"
+    class="font-bold mt-10"
+  >
+    Frameworks :
+  </h1>
   <!-- Conteneur des colonnes -->
-  <div class="grid mt-5 grid-cols-4 gap-5 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4">
-    <div *ngFor="let framework of frameworks" class="flex flex-col items-center relative group">
-      
+  <div
+    class="grid mt-5 grid-cols-4 gap-5 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4"
+  >
+    <div
+      *ngFor="let framework of frameworks"
+      class="flex flex-col items-center relative group"
+    >
       <!-- Icône SVG ou image -->
       <div class="relative mb-2">
         <img
-        data-aos="fade-left" 
-        [attr.data-aos-duration]="framework.duration" 
-        [attr.data-aos-delay]="framework.delay" 
-        [src]="framework.svgPath" alt="{{ framework.titre }}" 
-        class="w-10 h-10 rounded-full shadow-md" />
+          data-aos="fade-left"
+          [attr.data-aos-duration]="framework.duration"
+          [attr.data-aos-delay]="framework.delay"
+          [src]="framework.svgPath"
+          alt="{{ framework.titre }}"
+          class="w-10 h-10 rounded-full shadow-md"
+        />
       </div>
-      
+
       <!-- Titre de la compétence -->
-      <span 
-      data-aos="fade-left" 
-      [attr.data-aos-duration]="framework.duration" 
-      [attr.data-aos-delay]="framework.delay" 
-      class="text-white font-medium text-sm text-center">{{ framework.titre }}</span>
-      
+      <span
+        data-aos="fade-left"
+        [attr.data-aos-duration]="framework.duration"
+        [attr.data-aos-delay]="framework.delay"
+        class="text-white font-medium text-sm text-center"
+        >{{ framework.titre }}</span
+      >
+
       <!-- Tooltip amélioré -->
-      <div 
-        class="absolute top-20 left-1/2 transform -translate-x-1/2 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 
-               px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-lg">
+      <div
+        class="absolute top-20 left-1/2 transform -translate-x-1/2 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-lg"
+      >
         {{ framework.tooltip }}
-        <div class="absolute w-2 h-2 bg-gray-900 transform rotate-45 -top-1 left-1/2 -translate-x-1/2"></div>
+        <div
+          class="absolute w-2 h-2 bg-gray-900 transform rotate-45 -top-1 left-1/2 -translate-x-1/2"
+        ></div>
       </div>
     </div>
   </div>
 
   <!-- outils -->
-  <h1 
-  data-aos="fade-left" 
-  data-aos-duration="1500" 
-  data-aos-delay="30" 
-  class="font-bold mt-10">Outils :</h1>
+  <h1
+    data-aos="fade-left"
+    data-aos-duration="1500"
+    data-aos-delay="30"
+    class="font-bold mt-10"
+  >
+    Outils :
+  </h1>
   <!-- Conteneur des colonnes -->
-  <div class="grid mt-5 grid-cols-4 gap-5 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4">
-    <div *ngFor="let outil of outils" class="flex flex-col items-center relative group">
-      
+  <div
+    class="grid mt-5 grid-cols-4 gap-5 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4"
+  >
+    <div
+      *ngFor="let outil of outils"
+      class="flex flex-col items-center relative group"
+    >
       <!-- Icône SVG ou image -->
       <div class="relative mb-2">
-        <img 
-        data-aos="fade-left" 
-        [attr.data-aos-duration]="outil.duration" 
-        [attr.data-aos-delay]="outil.delay" 
-        [src]="outil.svgPath" alt="{{ outil.titre }}" 
-        class="w-10 h-10 rounded-full shadow-md" />
+        <img
+          data-aos="fade-left"
+          [attr.data-aos-duration]="outil.duration"
+          [attr.data-aos-delay]="outil.delay"
+          [src]="outil.svgPath"
+          alt="{{ outil.titre }}"
+          class="w-10 h-10 rounded-full shadow-md"
+        />
       </div>
-      
+
       <!-- Titre de la compétence -->
-      <span 
-      data-aos="fade-left" 
-      [attr.data-aos-duration]="outil.duration" 
-      [attr.data-aos-delay]="outil.delay" 
-      class="text-white font-medium text-sm text-center">{{ outil.titre }}</span>
-      
+      <span
+        data-aos="fade-left"
+        [attr.data-aos-duration]="outil.duration"
+        [attr.data-aos-delay]="outil.delay"
+        class="text-white font-medium text-sm text-center"
+        >{{ outil.titre }}</span
+      >
+
       <!-- Tooltip amélioré -->
-      <div 
-        class="absolute top-20 left-1/2 transform -translate-x-1/2 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 
-               px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-lg">
+      <div
+        class="absolute top-20 left-1/2 transform -translate-x-1/2 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-lg"
+      >
         {{ outil.tooltip }}
-        <div class="absolute w-2 h-2 bg-gray-900 transform rotate-45 -top-1 left-1/2 -translate-x-1/2"></div>
+        <div
+          class="absolute w-2 h-2 bg-gray-900 transform rotate-45 -top-1 left-1/2 -translate-x-1/2"
+        ></div>
       </div>
     </div>
   </div>

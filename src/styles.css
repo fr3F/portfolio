@@ -5,20 +5,20 @@
 @tailwind utilities;
 
 /* Ensuite, tes styles normaux */
-*, ::before, ::after {
+/* *, ::before, ::after {
   box-sizing: border-box;
-}
+} */
 
 /* Pour Firefox */
-* {
+/* * {
   scrollbar-width: none; 
   -ms-overflow-style: none; 
-}
+} */
 
 /* Pour Chrome, Edge et Safari */
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   display: none;
-}
+} */
 
 
 /* Style de la barre de progression */

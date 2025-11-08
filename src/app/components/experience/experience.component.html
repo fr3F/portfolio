@@ -1,109 +1,177 @@
 <div class="flex flex-col justify-center items-center mt-14 text-[18px]">
-  <h2 data-aos="fade-down" data-aos-duration="1500" data-aos-delay="300" class="text-4xl text-yellow-400 font-bold uppercase">{{ titre }}</h2>
+  <h2
+    data-aos="fade-down"
+    data-aos-duration="1500"
+    data-aos-delay="300"
+    class="text-4xl text-yellow-400 font-bold uppercase text-center"
+  >
+    {{ titre }}
+  </h2>
+  <!-- <h2 class="text-yellow-400 text-2xl font-bold uppercase mb-6 text-center">
+    {{ titre }}
+  </h2> -->
 
-  <div class="flex  flex-col lg:flex-row p-6 mt-16 gap-16">
-    <!-- Liste des expériences -->
-    <div class="ml-8 w-full lg:w-2/3" >
-      <!-- <h1 *ngIf="isSelect" class="text-2xl font-bold text-gray-300 mb-6">Détails de l'expérience</h1> -->
-      <img *ngIf="isImage" src="assets/images/frazakarivony.png" alt="">
-      <!-- Affichage de l'image -->
-                
-      <div *ngIf="selectedExperience">
-        <h1 class="text-3xl text-yellow-400 font-semibold">{{selectedExperience.titre}}</h1>
-      </div>
-      <div *ngIf="selectedExperience" class="m-10">            
-        <img [src]="selectedExperience.img" alt="Image de l'expérience" class="w-full max-w-xs h-auto object-cover rounded-lg mx-auto mb-4" />
-      </div>
-      
-      <!-- Détails de l'expérience -->
-      <p *ngIf="selectedExperience" class="text-gray-300 mb-6">{{ selectedExperience.details || 'Aucune description disponible.' }}</p>
-      
-      <div *ngIf="selectedExperience" class="mt-5">
-        <p class="font-semibold text-gray-300"><strong>Résultat attendu :</strong></p>
-        <ul class="list-disc list-inside text-gray-300 mb-2">
-          <li *ngFor="let resultat of selectedExperience.resultatAttendu">
-            {{ resultat }}
-          </li>
-        </ul>
-      </div>
-
-      <div *ngIf="selectedExperience" class="mt-5">
-        <p class="font-semibold text-gray-300"><strong>Méthodologie :</strong></p>
-        <ul class="list-disc list-inside text-gray-300 mb-2">
-          <li *ngFor="let methode of selectedExperience.methode">
-            {{ methode }}
-          </li>
-        </ul>
-      </div>
-      
-      <div *ngIf="selectedExperience" class="mt-5">
-        <p class="font-semibold text-gray-300 mb-2"><strong>Technologies utilisées :</strong></p>
-        <ul class="flex flex-wrap gap-2">
-          <li *ngFor="let tech of selectedExperience.technologies" class="bg-gray-200 text-black px-3 py-1 rounded-full text-sm">
-            {{ tech }}
-          </li>
-        </ul>
-      </div>
-  
-      <div *ngIf="selectedExperience" class="mt-4">
-        <p class="font-semibold text-gray-300"><strong>Lien GitHub: </strong>
-          <a [href]="selectedExperience.lienGitHub" target="_blank" class="text-blue-600 hover:underline">{{selectedExperience.lienGitHub}}</a>
-        </p>
-      </div>
-    </div>
-
+  <div class="flex flex-col lg:flex-row p-6 mt-16 gap-16">
     <!-- listes experiences -->
     <div class="font-sans w-full lg:w-1/3">
-      <ul class="space-y-6">
-        <li *ngFor="let exp of experience.slice(0, visibleExperienceCount)"
-            [attr.data-aos]="exp.event"
-            [attr.data-aos-duration]="exp.duration"
-            [attr.data-aos-delay]="exp.delay"
-            class="flex flex-col cursor-pointer rounded-lg transition-all duration-75" 
+      <ul
+        class="space-y-6 relative before:content-[''] before:absolute before:left-6 before:top-0 before:bottom-0 before:w-0.5 before:bg-yellow-400"
+      >
+        <li
+          *ngFor="let exp of experience"
+          [attr.data-aos]="exp.event"
+          [attr.data-aos-duration]="exp.duration"
+          [attr.data-aos-delay]="exp.delay"
+          class="flex flex-col cursor-pointer rounded-lg transition-all duration-75 relative pl-12"
+          [ngClass]="{
+            'border-2 border-white bg-yellow-500 text-black shadow-lg':
+              activeExperience === exp,
+            'hover:border hover:border-white': activeExperience !== exp
+          }"
+          (click)="selectExperience(exp)"
+        >
+          <!-- Puce -->
+          <div
+            class="absolute left-3 top-6 w-6 h-6 rounded-full border-4 border-yellow-400 z-10"
             [ngClass]="{
-              'border-2 border-white bg-yellow-500 text-black shadow-lg': activeExperience === exp,
-              'hover:border hover:border-white': activeExperience !== exp
-            }" 
-            (click)="selectExperience(exp)" 
-            (mouseenter)="onMouseEnter(exp)" 
-            (mouseover)="hoverExperience(exp)">
-              
-          <div 
-            class="relative flex items-center" 
-            (mouseleave)="onMouseLeave()"
-          >
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-48 h-14" viewBox="0 0 190 50">
-            
-            <rect x="0" y="0" width="190" height="50" rx="10" ry="10"
-                  [attr.fill]="activeExperience === exp ? '#FFC107' : '#FFC107'" 
-                  filter="url(#white-shadow)"/>
-          
-            <text x="95" y="32" class="font-bold text-lg fill-black" text-anchor="middle">
-              {{ exp.date }}
-            </text>
-          </svg>
-          
+              'bg-yellow-400': activeExperience === exp,
+              'bg-gray-800': activeExperience !== exp
+            }"
+          ></div>
+          <div class="relative flex items-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-48 h-14"
+              viewBox="0 0 190 50"
+            >
+              <rect
+                x="0"
+                y="0"
+                width="190"
+                height="50"
+                rx="10"
+                ry="10"
+                [attr.fill]="activeExperience === exp ? '#FFC107' : '#FFC107'"
+                filter="url(#white-shadow)"
+              />
+
+              <text
+                x="95"
+                y="32"
+                class="font-bold text-lg fill-black"
+                text-anchor="middle"
+              >
+                {{ exp.date }}
+              </text>
+            </svg>
           </div>
-    
+
           <div class="ml-4">
-            <strong class="text-lg font-semibold size-1" [ngClass]="{ 'text-black': activeExperience === exp, 'text-gray-500': activeExperience !== exp }">
+            <strong
+              class="text-lg font-semibold size-1"
+              [ngClass]="{
+                'text-black': activeExperience === exp,
+                'text-gray-500': activeExperience !== exp
+              }"
+            >
               {{ exp.titre }}
             </strong>
           </div>
         </li>
       </ul>
-      <!-- Ajout de la div pour droit le bouton -->
-      <div class="flex justify-end mt-5 w-full">
-        <button 
-          *ngIf="visibleExperienceCount < experience.length" 
-          (click)="showMore()" 
-          class="bg-transparent text-white px-4 py-2 rounded-lg hover:bg-yellow-600 transition-all duration-300 relative">
-          <span class="relative after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-white after:transition-all after:duration-300 after:scale-x-100 hover:after:scale-x-0">
-            Voir plus
-          </span>
-        </button>
+    </div>
+
+    <!-- Liste des expériences avec référence template -->
+    <div #experienceDetails>
+      <!-- Image par défaut -->
+      <img
+        *ngIf="isImage"
+        src="assets/images/frazakarivony.png"
+        alt="Image par défaut"
+        class="w-full max-w-md mx-auto rounded-lg"
+      />
+
+      <!-- Détails de l'expérience sélectionnée -->
+      <div *ngIf="selectedExperience">
+        <h1 class="text-2xl text-yellow-400 font-semibold mb-6">
+          {{ selectedExperience.titre }}
+        </h1>
+
+        <div class="m-10">
+          <img
+            [src]="selectedExperience.img"
+            alt="Image de l'expérience"
+            class="w-full max-w-xs h-auto object-cover rounded-lg mx-auto mb-4"
+          />
+        </div>
+
+        <!-- Description -->
+        <p class="text-gray-300 mb-6">
+          {{ selectedExperience.details || "Aucune description disponible." }}
+        </p>
+
+        <!-- Résultat attendu -->
+        <div class="mt-5">
+          <p class="font-semibold text-gray-300">
+            <strong>Résultat attendu :</strong>
+          </p>
+          <ul class="list-disc list-inside text-gray-300 mb-2">
+            <li *ngFor="let resultat of selectedExperience.resultatAttendu">
+              {{ resultat }}
+            </li>
+          </ul>
+        </div>
+
+        <!-- Méthodologie -->
+        <div class="mt-5">
+          <p class="font-semibold text-gray-300">
+            <strong>Méthodologie :</strong>
+          </p>
+          <ul class="list-disc list-inside text-gray-300 mb-2">
+            <li *ngFor="let methode of selectedExperience.methode">
+              {{ methode }}
+            </li>
+          </ul>
+        </div>
+
+        <!-- Technologies utilisées -->
+        <div class="mt-5">
+          <p class="font-semibold text-gray-300 mb-2">
+            <strong>Technologies utilisées :</strong>
+          </p>
+          <ul class="flex flex-wrap gap-2">
+            <li
+              *ngFor="let tech of selectedExperience.technologies"
+              class="bg-gray-200 text-black px-3 py-1 rounded-full text-sm"
+            >
+              {{ tech }}
+            </li>
+          </ul>
+        </div>
+
+        <!-- Liens GitHub et Prod -->
+        <div class="mt-4">
+          <p class="font-semibold text-gray-300">
+            <strong>Lien GitHub: </strong>
+            <a
+              [href]="selectedExperience.lienGitHub"
+              target="_blank"
+              class="text-blue-600 hover:underline"
+              >{{ selectedExperience.lienGitHub }}</a
+            >
+          </p>
+
+          <p class="font-semibold text-gray-300">
+            <strong>Lien Prod: </strong>
+            <a
+              [href]="selectedExperience.lienProd"
+              target="_blank"
+              class="text-blue-600 hover:underline"
+              >{{ selectedExperience.lienProd }}</a
+            >
+          </p>
+        </div>
       </div>
     </div>
-  
   </div>
 </div>

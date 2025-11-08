@@ -1,29 +1,31 @@
-<router-outlet/>
+<router-outlet />
 <div id="progress-bar"></div>
 
-<div class=" text-white container mx-auto my-4 w-full">
-    <!-- Titre principal -->
-    <app-scrolled-titre/>
+<div class="text-white container mx-auto my-4 w-full">
+  <!-- Titre principal -->
+  <app-scrolled-titre />
 
-    <!-- Expérience + Profil + Contact -->
+  <!-- Expérience + Profil + Contact -->
 
-    <div class="gap-14 mt-12 flex justify-center flex-wrap">
-        <!-- Sur mobile, app-profil sera en premier -->
-        <app-software-skills class="flex-grow basis-20 order-2 md:order-1"/>
-        <app-profil class="flex-grow basis-20 order-1 md:order-1"/>
-        <app-contact class="flex-grow basis-20 order-3 md:order-2"/>
-    </div>    
+  <div class="gap-14 mt-12 flex justify-center flex-wrap">
+    <!-- Sur mobile, app-profil sera en premier -->
+    <app-software-skills class="flex-grow basis-20 order-2 md:order-1" />
+    <app-profil class="flex-grow basis-20 order-1 md:order-1" />
+    <app-contact class="flex-grow basis-20 order-3 md:order-2" />
+  </div>
 
-    <!-- experience -->
-    <app-experience/>
-    <!-- Hobbies + Education + Skills -->
-        <div class="flex gap-x-6 mt-12 flex-wrap justify-center align-center content-center">
-            <!-- Sections alignées et espacées -->
-            <app-education class="flex basis-1/2"/>
-            <app-hobbies class="flex-grow basis-64"/>
-            <app-language class="flex-grow basis-64"/>
-        </div>
+  <!-- experience -->
+  <app-experience />
+  <!-- Hobbies + Education + Skills -->
+  <div
+    class="flex gap-x-6 mt-12 flex-wrap justify-center align-center content-center"
+  >
+    <!-- Sections alignées et espacées -->
+    <app-education class="flex basis-1/2" />
+    <app-hobbies class="flex-grow basis-64" />
+    <app-language class="flex-grow basis-64" />
+  </div>
 
-    <app-footer/>
+  <app-footer />
+  <app-chat-bot></app-chat-bot>
 </div>
-
